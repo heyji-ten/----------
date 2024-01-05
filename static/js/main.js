@@ -7,11 +7,11 @@ ui.dimShow = function(){ /* 딤드 show */
 ui.dimHide = function(){ /* 딤드 hide */
 	$("body").removeClass("dim");
 }
-ui.fullPopup = function(){ //팝업
-	var $openBtn = $(".full_open"),
-		$closeBtn = $(".full_pop .closed");
+ui.popup = function(){ //팝업
+	var $openBtn = $(".pop_open"),
+		$closeBtn = $(".pop-section .closed");
 	
-	$('.full_pop').each(function() {
+	$('.pop-section').each(function() {
 		$(this).attr('tabindex', '0');
 	});
 
@@ -20,14 +20,11 @@ ui.fullPopup = function(){ //팝업
 	$openBtn.on("click", function(e) { /* 열기 */
 		e.preventDefault();
 		$btn = $(this);
-		var target = $(this).attr("open-full-pop") || e;
-		var layer = $(".full_pop" + "." + target);
+		var target = $(this).attr("open-pop") || e;
+		var layer = $(".pop-section" + "." + target);
 
 		console.log(layer)
 
-		if(layer.find('.tab_title').length) {
-			layer.addClass('tab_style');
-		}
 		layer.fadeIn(150).addClass("on");
 		layer.focus();
 		ui.dimShow();
@@ -43,7 +40,7 @@ ui.fullPopup = function(){ //팝업
 	});
 
 	$closeBtn.on("click", function() { /* 닫기 */
-		var target= $(this).closest(".full_pop");
+		var target= $(this).closest(".pop-section");
 		target.fadeOut(150).removeClass("on");
 		ui.dimHide();
 		$btn = $btn ?? $(this);
@@ -52,5 +49,5 @@ ui.fullPopup = function(){ //팝업
 }
 
 $(function () {
-    $(".full_pop").length && ui.fullPopup(); //팝업
+    $(".pop-section").length && ui.popup(); //팝업
 });
