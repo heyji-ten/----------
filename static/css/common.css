@@ -143,7 +143,7 @@ header {
 
 .content-section .navbar ul li.search .search-btn {
     background: url(../images/search.png);
-    background-size: inherit;
+    background-size: 3.761vw 3.932vw;
     background-repeat: no-repeat;
     width: 100%;
     height: 10.427vw;
