@@ -10,7 +10,7 @@
 /* header */
 header {
     background: var(--main-color);
-    padding: 10px;
+    padding: 2.137vw 3.419vw;
 }
 .header-wrap {
     display: flex;
@@ -18,11 +18,12 @@ header {
     justify-content: center;
     position: relative;
     margin-bottom: 1em;
+    height: 10.684vw;
 }
 
 .header-wrap .title {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 3.846vw;
 }
 
 .header-wrap .left-wrap {
@@ -36,8 +37,8 @@ header {
 
 .header-wrap .left-wrap .back-btn {
     background: url(/static/images/left.png);
-    width: 20px;
-    height: 20px;
+    width: 5.983vw;
+    height: 5.983vw;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -50,21 +51,21 @@ header {
     transform: translateY(-50%);
     align-items: center;
     justify-content: end;
-    gap: 1.5em;
+    gap: 4.274vw;
 }
 
 .header-wrap .right-wrap .great-btn {
     background: url(/static/images/heart.png);
-    width: 20px;
-    height: 20px;
+    width: 5.983vw;
+    height: 5.983vw;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .header-wrap .right-wrap .bag-btn {
     background: url(/static/images/right.png);
-    width: 40px;
-    height: 10px;
+    width: 10vw;
+    height: 3vw;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -78,8 +79,12 @@ header {
 
 .sub-header-wrap .btn-wrap ul {
     display: flex;
-    align-items: baseline;
-    gap: 1em;
+    align-items: center;
+    gap: 7.692vw;
+}
+
+.sub-header-wrap .btn-wrap.round-wrap ul {
+    gap: 3.419vw;
 }
 
 .sub-header-wrap .btn-wrap ul li .header-btn {
@@ -87,20 +92,32 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 60px;
 }
 
 .sub-header-wrap .btn-wrap ul li .header-btn img{
-    width: 50px;
-    height: 50px;
+    width: 8.547vw;
+    height: 8.547vw;
+}
+
+.sub-header-wrap .btn-wrap ul li .header-btn .white-img{
+    width: 8.547vw;
+    height: 8.547vw;
+    background: #fff;
+    border-radius: 50%;
 }
 
 .sub-header-wrap .btn-wrap ul li .header-btn span {
-    font-size: 14px;
+    font-size: 2.393vw;
+    letter-spacing: -0.2em;
+    font-weight: 500;
 }
 
 .sub-header-wrap .btn-wrap ul li .round-btn {
-    width: 80px;
+    width: 17.778vw;
+}
+
+.sub-header-wrap .btn-wrap ul li:last-child .round-btn {
+    width: 19.487vw;
 }
 
 
