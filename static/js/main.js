@@ -51,3 +51,41 @@ ui.popup = function(){ //팝업
 $(function () {
     $(".pop-section").length && ui.popup(); //팝업
 });
+
+$(document).ready(function () {
+    $('.navbar ul li a').on('click', function () {
+        $('.navbar ul li').removeClass('active');
+        $(this).parent().addClass('active');
+        scrollToActive();
+    });
+
+    $('.content-section .contents').on('scroll', function () {
+        scrollToActive();
+    });
+
+    function scrollToActive() {
+        $('.divider').each(function () {
+            if ($(this).offset().top <= $('.content-section .contents').scrollTop() + $('.content-section .contents').height() &&
+                $(this).offset().top + $(this).outerHeight() > $('.content-section .contents').scrollTop()) {
+                var dividerId = $(this).attr('id');
+
+                $('.navbar ul li').removeClass('active');
+                var activeNav = $('.navbar ul li a[href="#' + dividerId + '"]').parent();
+                activeNav.addClass('active');
+            }
+        });
+
+        // 스크롤바 포커싱 추가
+        var activeElement = $('.navbar li.active');
+        if (activeElement.length > 0) {
+            var navbarHeight = $('.navbar').outerHeight();
+            var activeOffset = activeElement.offset().top - $('.navbar').offset().top;
+            var activeHeight = activeElement.outerHeight();
+            var scrollTop = activeOffset + (activeHeight / 2) - (navbarHeight / 2);
+
+            $('.navbar').stop().animate({
+                scrollTop: scrollTop
+            }, 500);
+        }
+    }
+});
